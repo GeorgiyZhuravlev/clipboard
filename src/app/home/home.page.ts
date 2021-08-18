@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {Clipboard} from '@capacitor/clipboard';
+
 
 @Component({
   selector: 'app-home',
@@ -7,6 +9,12 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor() {
+  }
 
+  copy() {
+    const image = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAAAklEQVR4AewaftIAAARqSURBVO3B0XUjNxQFwdY7TAYJIRp8IhokhHBkBeA7WC/pOZTUVR+fX5D0rwpJUSEpKiRFhaSokBQVkqJCUlRIih78gdYnv81eg2e1PnmFvQYnrU+u7DU4aX3y2+w1uFJIigpJUSEpKiRFhaSokBQVkqJCUvTgRfYafBetT16h9cmVvQYnrU++k70G30Xrk2cVkqJCUlRIigpJUSEpKiRFhaSokBQ9uFHrkzvsNbjDXoMrrU/ustfgHbQ+ucNegzsUkqJCUlRIigpJUSEpKiRFhaTogf43ew1OWp+ctD551l4D/XeFpKiQFBWSokJSVEiKCklRISkqJEUP9Ndan1zZa/AKew1OWp/o9QpJUSEpKiRFhaSokBQVkqJCUlRIih7caK/BT7LX4Errk99mr8FPUkiKCklRISkqJEWFpKiQFBWSogcv0vrkt2l9cmWvwUnrk++k9clvUkiKCklRISkqJEWFpKiQFBWSokJS9PH5Bb211ifP2mug/66QFBWSokJSVEiKCklRISkqJEWFpOjBH2h9crLX4KT1yZW9BietT072GlxpfXKy1+A72WvwDlqfnOw1eFbrk5O9Bs8qJEWFpKiQFBWSokJSVEiKCknRx+cXXqD1yclegyutT072GryL1idX9hqctD452WvwLlqf/CR7Da4UkqJCUlRIigpJUSEpKiRFhaSokBQ9+AOtT16h9ckdWp98F3sNXqH1iV6vkBQVkqJCUlRIigpJUSEpKiRFhaTowY32GlxpfXKHvQYnrU9O9hpcaX1ystfgFfYaXGl9crLX4KT1yR32GlxpfXKy1+BZhaSokBQVkqJCUlRIigpJUSEpKiRFH59feIHWJyd7DZ7V+uRd7DV4F61Pruw1uEPrk5O9Bt9FISkqJEWFpKiQFBWSokJSVEiKHrzIXoM77DV4F61Pruw1OGl98gp7Da60PjnZa3CH1icnew2utD452WvwrEJSVEiKCklRISkqJEWFpKiQFBWSogd/oPXJb7PX4GSvwU/S+uQOew1OWp88q/XJyV6DK4WkqJAUFZKiQlJUSIoKSVEhKSokRQ9eZK/Bd9H65KdpffKsvQbvYq/BOygkRYWkqJAUFZKiQlJUSIoKSdGDG7U+ucNegzu0Prmy1+Bkr8FJ65OTvQbPan3yLvYavINCUlRIigpJUSEpKiRFhaSokBQVkqIH+mt7Da60PjnZa3Cy1+An2WvwrNYnJ3sNnlVIigpJUSEpKiRFhaSokBQVkqJCUvRAf631ybNan5zsNThpfXJlr8HJXoOT1id3aH1yZa/BSeuTk70GVwpJUSEpKiRFhaSokBQVkqJCUvTgRnsNfpK9Bldan5zsNXiFvQbPan3yrL0Gr7DX4Errk5O9Bs8qJEWFpKiQFBWSokJSVEiKCklRISl68CKtT36b1ifvovXJlb0Gr7DX4LtofXKy1+BKISkqJEWFpKiQFBWSokJSVEiKCknRx+cXJP2rQlJUSIoKSVEhKSokRYWkqJAU/QPWHAmTrUSkJwAAAABJRU5ErkJggg==';
+    console.log('image to copy:', image);
+    Clipboard.write({image});
+  }
 }
